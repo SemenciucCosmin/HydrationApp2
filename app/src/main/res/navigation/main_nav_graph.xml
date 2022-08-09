@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.hydrationapp2.ui.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/quantityFragment"
+        android:name="com.example.hydrationapp2.ui.QuantityFragment"
+        android:label="fragment_quantity"
+        tools:layout="@layout/fragment_quantity" >
+        <argument
+            android:name="containerType"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.hydrationapp2.ui.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_quantityFragment"
+            app:destination="@id/quantityFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_unitFragment"
+            app:destination="@id/unitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todayFragment"
+        android:name="com.example.hydrationapp2.ui.TodayFragment"
+        android:label="fragment_today"
+        tools:layout="@layout/fragment_today" />
+    <fragment
+        android:id="@+id/unitFragment"
+        android:name="com.example.hydrationapp2.ui.UnitFragment"
+        android:label="UnitFragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.hydrationapp2.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/leaf_bg"
+    tools:context=".ui.QuantityFragment">
+
+    <data>
+
+        <variable
+            name="quantityFragment"
+            type="com.example.hydrationapp2.ui.QuantityFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/gray_1"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/toolbar_button_ripple"
+                android:contentDescription="@string/back_navigation_image_description"
+                android:onClick="@{() -> quantityFragment.navigateBack()}"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/toolbar_button_ripple"
+                android:onClick="@{() -> quantityFragment.cancelEditedSize()}"
+                android:text="@string/cancel_button"
+                android:textColor="@color/green"
+                android:textSize="@dimen/top_bar_button_text_size"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/top_bar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/top_bar_title_text_size" />
+
+            <TextView
+                android:id="@+id/save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/toolbar_button_ripple"
+                android:onClick="@{() -> quantityFragment.saveEditedSize()}"
+                android:paddingEnd="@dimen/top_bar_button_end_padding"
+                android:text="@string/save_button"
+                android:textColor="@color/green"
+                android:textSize="@dimen/top_bar_button_text_size"
+                android:visibility="invisible"
+                tools:ignore="RtlSymmetry" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:id="@+id/toolbar_separator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_line_view_size"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_navigation" />
+
+        <TextView
+            android:id="@+id/quantity_message"
+            android:layout_width="@dimen/container_message_width"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/container_message_top_padding"
+            android:paddingBottom="@dimen/container_message_bottom_padding"
+            android:text="@string/container_message"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/container_message_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_separator" />
+
+        <EditText
+            android:id="@+id/container_size"
+            android:layout_width="@dimen/container_size_width"
+            android:layout_height="@dimen/container_size_height"
+            android:background="@drawable/custom_input"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/container_size_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/quantity_message"
+            tools:ignore="LabelFor"
+            tools:text="2000" />
+
+        <TextView
+            android:id="@+id/measurement_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/container_unit_top_padding"
+            android:text="@string/ml_unit_choice"
+            android:textColor="@color/white"
+            android:textSize="@dimen/container_unit_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_size" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

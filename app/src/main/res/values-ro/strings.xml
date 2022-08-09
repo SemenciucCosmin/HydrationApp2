@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Hydration App</string>
+
+    <!--  Titles for the top and bottom bar  -->
+    <string name="today_toolbar_title">Progresul de Azi</string>
+    <string name="today_title">Azi</string>
+    <string name="history_title">Istoric</string>
+    <string name="settings_title">Setări</string>
+
+    <!--  Today fragment  -->
+    <string name="today_message">Suntem încântați că te-ai întors să îți înregistrezi obiceiul tău sănătos de a te menține hidratat.</string>
+    <string name="glass_percentage">%s%%</string>
+    <string name="goal_ml">of %s ml Ținta</string>
+    <string name="goal_oz">of %s oz Ținta</string>
+    <string name="intake_container_ml">%s ml</string>
+    <string name="intake_container_oz">%s oz</string>
+    <string name="glass_image_description">Repezentare a paharului</string>
+    <string name="glass_background_image_description">Reprezentare a lichidului din pahar</string>
+
+    <!--  History fragment  -->
+    <string name="history_message">Aici poți vedea datele de hidratare din ultimele 30 de zile</string>
+    <string name="goal_statistic">din %s %s Țintă</string>
+    <string name="settings_button_image_description">Buton pentru a naviga spre setări</string>
+
+    <!--  Settings fragment  -->
+    <string name="units_title">Unități</string>
+    <string name="daily_goal_title">Ținta Zilnica</string>
+    <string name="containers_title">Recipiente</string>
+    <string name="container_1_title">Recipientul 1</string>
+    <string name="container_2_title">Recipientul 2</string>
+    <string name="container_3_title">Recipientul 3</string>
+    <string name="settings_message">Aceste recipiente vor apărea pe ecranul tău astfel încât îți va fi ușor să le apeși și să îți înregistrezi consumul.</string>
+    <string name="short_ml_unit">ml</string>
+    <string name="long_ml_unit">mililitri</string>
+    <string name="short_oz_unit">oz</string>
+    <string name="long_oz_unit">uncii</string>
+
+    <!--  Unit fragment  -->
+    <string name="oz_unit_choice">uncii (oz)</string>
+    <string name="ml_unit_choice">mililitri (ml)</string>
+
+    <!--  Quantity fragment  -->
+    <string name="goal_message">Aici îți poți seta ținta de hidratare bazată pe unitatea de măsurare preferată de tine.</string>
+    <string name="container_message">Aici poți specifica mărimea recipientului încât îți va fi ușor să îl apeși și să îți înregistrezi consumul</string>
+    <string name="cancel_button">Anulează</string>
+    <string name="save_button">Salvează</string>
+    <string name="back_navigation_image_description">Buton în formă de sageată pentru a naviga inapoi</string>
+    <string name="check_mark_image_description">Bifă ce marchează dacă ținta de consum este atinsa</string>
+
+
+</resources>

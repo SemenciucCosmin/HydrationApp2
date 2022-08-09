@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tab_ripple"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <TextView
+        android:id="@+id/tab_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@integer/material_motion_duration_long_1"
+        android:padding="@dimen/settings_text_padding"
+        android:textColor="@color/white"
+        android:textSize="@dimen/settings_text_size"
+        tools:text="@string/daily_goal_title" />
+
+    <TextView
+        android:id="@+id/tab_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/settings_text_padding"
+        android:paddingBottom="@dimen/settings_text_padding"
+        android:textColor="@color/green"
+        android:textSize="@dimen/settings_text_size"
+        tools:text="2000" />
+
+    <TextView
+        android:id="@+id/tab_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/settings_unit_end_margin"
+        android:padding="@dimen/settings_text_padding"
+        android:textColor="@color/white"
+        android:textSize="@dimen/settings_text_size"
+        tools:text="ml" />
+</LinearLayout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.SettingsFragment">
+
+    <data>
+
+        <variable
+            name="settingsFragment"
+            type="com.example.hydrationapp2.ui.SettingsFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/gray_1"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/toolbar_button_ripple"
+                android:contentDescription="@string/back_navigation_image_description"
+                android:onClick="@{() -> settingsFragment.navigateBack()}"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/settings_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/top_bar_title_text_size" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:id="@+id/toolbar_separator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_line_view_size"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_navigation" />
+
+        <include layout="@layout/line_separator"
+            android:id="@+id/line_separator1"
+            android:layout_marginTop="@dimen/line_view_top_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_view_size"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_separator"/>
+
+        <LinearLayout
+            android:id="@+id/unit_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_ripple"
+            android:onClick="@{() -> settingsFragment.editUnit()}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_separator1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/material_motion_duration_long_1"
+                android:padding="@dimen/settings_text_padding"
+                android:text="@string/units_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/settings_text_size" />
+
+            <TextView
+                android:id="@+id/unit_measurement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/settings_unit_end_margin"
+                android:padding="@dimen/settings_text_padding"
+                android:textColor="@color/green"
+                android:textSize="@dimen/settings_text_size"
+                tools:text="ml" />
+        </LinearLayout>
+
+        <include layout="@layout/line_separator"
+            android:id="@+id/line_separator2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_view_size"
+            app:layout_constraintTop_toBottomOf="@id/unit_box"/>
+
+        <include layout="@layout/settings_tab"
+            android:id="@+id/goal_box"
+            app:layout_constraintTop_toBottomOf="@id/line_separator2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include layout="@layout/line_separator"
+            android:id="@+id/line_separator3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_view_size"
+            app:layout_constraintTop_toBottomOf="@id/goal_box"/>
+
+        <TextView
+            android:id="@+id/settings_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/settings_category_start_padding"
+            android:paddingTop="@dimen/settings_category_top_padding"
+            android:paddingBottom="@dimen/settings_category_bottom_padding"
+            android:text="@string/containers_title"
+            android:textColor="@color/gray_4"
+            android:textSize="@dimen/settings_message_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_separator3"
+            tools:ignore="RtlSymmetry" />
+
+        <include layout="@layout/line_separator"
+            android:id="@+id/line_separator4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_view_size"
+            app:layout_constraintTop_toBottomOf="@id/settings_category"/>
+
+        <include layout="@layout/settings_tab"
+            android:id="@+id/container_1_box"
+            app:layout_constraintTop_toBottomOf="@id/line_separator4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include layout="@layout/line_separator"
+            android:id="@+id/line_separator5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_view_size"
+            app:layout_constraintTop_toBottomOf="@id/container_1_box"/>
+
+        <include layout="@layout/settings_tab"
+            android:id="@+id/container_2_box"
+            app:layout_constraintTop_toBottomOf="@id/line_separator5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include layout="@layout/line_separator"
+            android:id="@+id/line_separator6"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_view_size"
+            app:layout_constraintTop_toBottomOf="@id/container_2_box"/>
+
+        <include layout="@layout/settings_tab"
+            android:id="@+id/container_3_box"
+            app:layout_constraintTop_toBottomOf="@id/line_separator6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include layout="@layout/line_separator"
+            android:id="@+id/line_separator7"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_view_size"
+            app:layout_constraintTop_toBottomOf="@id/container_3_box"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/settings_message_start_padding"
+            android:paddingEnd="@dimen/settings_message_start_padding"
+            android:paddingTop="@dimen/settings_message_top_padding"
+            android:text="@string/settings_message"
+            android:textAlignment="center"
+            android:textColor="@color/gray_4"
+            android:textSize="@dimen/settings_message_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_separator7"
+            tools:ignore="RtlSymmetry" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

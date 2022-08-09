@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/leaf_bg"
+    tools:context=".ui.TodayFragment">
+
+    <data>
+
+        <variable
+            name="todayFragment"
+            type="com.example.hydrationapp2.ui.TodayFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/gray_1"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/settings_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/toolbar_button_ripple"
+                android:onClick="@{() -> todayFragment.navigateToSettings()}"
+                android:padding="@dimen/settings_icon_padding"
+                android:src="@drawable/ic_settings"
+                android:contentDescription="@string" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/today_toolbar_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/top_bar_title_text_size" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:id="@+id/toolbar_separator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_line_view_size"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_navigation" />
+
+        <TextView
+            android:id="@+id/glass_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="@dimen/percentage_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/goal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_separator"
+            tools:text="100%"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <TextView
+            android:id="@+id/goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/goal_padding"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/goal_text_size"
+            app:layout_constraintBottom_toTopOf="@id/glass_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/glass_percentage"
+            tools:text="of 2000 ml Goal" />
+
+        <FrameLayout
+            android:id="@+id/glass_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/buttons_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goal">
+
+            <ImageView
+                android:id="@+id/glass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/glass_image_description"
+                android:src="@drawable/ic_glass_empty" />
+
+            <ImageView
+                android:id="@+id/glass_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/glass_background_image_description" />
+
+            <TextView
+                android:id="@+id/current_intake"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:paddingBottom="@dimen/intake_bottom_padding"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/intake_text_size"
+                tools:ignore="RtlCompat"
+                tools:text="1500 ml" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/buttons_padding"
+            android:paddingBottom="@dimen/buttons_padding"
+            app:layout_constraintBottom_toTopOf="@id/today_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/glass_layout">
+
+            <Button
+                android:id="@+id/container_1_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_margin="@dimen/button_margin"
+                android:backgroundTint="@color/green"
+                android:onClick="@{() -> todayFragment.addIntake(1)}"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                tools:text="100 ml" />
+
+            <Button
+                android:id="@+id/container_2_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:backgroundTint="@color/green"
+                android:onClick="@{() -> todayFragment.addIntake(2)}"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                tools:text="250 ml" />
+
+            <Button
+                android:id="@+id/container_3_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_margin="@dimen/button_margin"
+                android:backgroundTint="@color/green"
+                android:onClick="@{() -> todayFragment.addIntake(3)}"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                tools:text="750 ml" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/today_message"
+            android:layout_width="@dimen/today_message_text_width"
+            android:layout_height="wrap_content"
+            android:text="@string/today_message"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/today_message_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttons_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

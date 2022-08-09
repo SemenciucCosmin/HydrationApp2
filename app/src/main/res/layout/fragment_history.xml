@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.HistoryFragment">
+
+    <data>
+
+        <variable
+            name="historyFragment"
+            type="com.example.hydrationapp2.ui.HistoryFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/gray_1"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/settings_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/toolbar_button_ripple"
+                android:contentDescription="@null"
+                android:onClick="@{() -> historyFragment.navigateToSettings()}"
+                android:padding="@dimen/settings_icon_padding"
+                android:src="@drawable/ic_settings" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/history_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/top_bar_title_text_size" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:id="@+id/toolbar_separator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_line_view_size"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_navigation" />
+
+        <TextView
+            android:id="@+id/history_message"
+            android:layout_width="@dimen/history_message_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/history_layout_top_spacing"
+            android:text="@string/history_message"
+            android:textAlignment="center"
+            android:textColor="@color/gray_4"
+            android:textSize="@dimen/history_message_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_separator" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bar_chart"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/chart_height"
+            android:layout_marginStart="@dimen/chart_margin"
+            android:layout_marginTop="@dimen/chart_margin"
+            android:layout_marginEnd="@dimen/chart_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/history_message" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chart_dates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/chart_dates_start_margin"
+            android:layout_marginEnd="@dimen/chart_dates_end_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bar_chart">
+
+            <TextView
+                android:id="@+id/start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/chart_dates_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SmallSp"
+                tools:text="01.01" />
+
+            <TextView
+                android:id="@+id/end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/chart_dates_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SmallSp"
+                tools:text="01.01" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/records_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/records_list_top_margin"
+            android:layout_marginBottom="@dimen/records_list_bottom_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chart_dates"
+            tools:listitem="@layout/record_list_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

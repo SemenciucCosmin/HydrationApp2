@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Hydration App</string>
+
+    <!--  Titles for the top and bottom bar  -->
+    <string name="today_toolbar_title">Today\'s Progress</string>
+    <string name="today_title">Today</string>
+    <string name="history_title">History</string>
+    <string name="settings_title">Settings</string>
+
+    <!--  Today fragment  -->
+    <string name="today_message">Happy you\'re back to track your healthy habit of staying hydrated.</string>
+    <string name="glass_percentage">%s%%</string>
+    <string name="goal_ml">of %s ml Goal</string>
+    <string name="goal_oz">of %s oz Goal</string>
+    <string name="intake_container_ml">%s ml</string>
+    <string name="intake_container_oz">%s oz</string>
+    <string name="glass_image_description">Representation of a glass</string>
+    <string name="glass_background_image_description">Representation of liquid in the glass</string>
+
+    <!--  History fragment  -->
+    <string name="history_message">Here you can see your hydration data for the last 30 days</string>
+    <string name="goal_statistic">out of %s %s Goal</string>
+    <string name="settings_button_image_description">Button for navigation to settings</string>
+
+    <!--  Settings fragment  -->
+    <string name="units_title">Units</string>
+    <string name="daily_goal_title">Daily Goal</string>
+    <string name="containers_title">Containers</string>
+    <string name="container_1_title">Container 1</string>
+    <string name="container_2_title">Container 2</string>
+    <string name="container_3_title">Container 3</string>
+    <string name="settings_message">These containers will appear on your screen so you can easily tap on them and track your intake.</string>
+    <string name="short_ml_unit">ml</string>
+    <string name="long_ml_unit">milliliters</string>
+    <string name="short_oz_unit">oz</string>
+    <string name="long_oz_unit">ounces</string>
+
+    <!--  Unit fragment  -->
+    <string name="oz_unit_choice">ounces (oz)</string>
+    <string name="ml_unit_choice">milliliters (ml)</string>
+
+    <!--  Quantity fragment  -->
+    <string name="goal_message">Here you can set your hydration goal based on your preferred unit of measurement.</string>
+    <string name="container_message">Here you can specify your container size so it would be easier to enter your daily liquid intake.</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
+    <string name="back_navigation_image_description">Arrow button for back navigation</string>
+    <string name="check_mark_image_description">Check mark indicating if the intake goal is reached</string>
+
+</resources>

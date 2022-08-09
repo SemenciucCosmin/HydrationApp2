@@ -1,0 +1,33 @@
+package com.example.hydrationapp2.data
+
+const val SETTINGS_PREFERENCE_NAME = "settings_preferences"
+const val WEEK_DAY = 0
+const val MONTH = 1
+const val MONTH_DAY = 2
+const val FIRST = 0
+const val BAR_WIDTH = 0.5F
+const val GOAL_MAX_HEIGHT = 200
+const val GOAL_MIN_HEIGHT = 0F
+const val SQUARE_SPACE = 0F
+const val SQUARE_OFFSET = 2F
+const val SQUARE_SIZE = 6.45F
+const val LAST = 29
+const val MAX_RECORD_NR = 30
+const val DEFAULT_INTAKE = 0
+const val DEFAULT_GOAL = 2000
+const val DEFAULT_UNIT = "ml"
+const val DEFAULT_CONTAINER1_SIZE = 100
+const val DEFAULT_CONTAINER2_SIZE = 250
+const val DEFAULT_CONTAINER3_SIZE = 750
+const val DATE_PATTERN = "EEEE.MMMM.dd.MM.yyyy"
+const val SHORT_DATE_PATTERN = "dd.MM"
+const val GOAL_TYPE = 0
+const val CONTAINER_1_TYPE = 1
+const val CONTAINER_2_TYPE = 2
+const val CONTAINER_3_TYPE = 3
+const val DATE_DIVIDER = 86400000
+const val HISTORY_RECORDS_NR = 29
+const val TODAY_FRAGMENT = 0
+const val HISTORY_FRAGMENT = 1
+const val REMOVE_UNUSED_RECORDS_WORK = "remove_unused_records_work"
+const val WORK_REPEAT_INTERVAL = 120L

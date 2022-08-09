@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="unitFragment"
+            type="com.example.hydrationapp2.ui.UnitFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.UnitFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/gray_1"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/toolbar_button_ripple"                android:contentDescription="@null"
+                android:onClick="@{() -> unitFragment.navigateBack()}"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/units_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/top_bar_title_text_size" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:id="@+id/toolbar_separator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_line_view_size"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_navigation" />
+
+        <TextView
+            android:id="@+id/milliliters_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/units_top_spacing"
+            android:background="@drawable/tab_ripple"
+            android:onClick='@{() -> unitFragment.saveMeasurementUnit("ml")}'
+            android:padding="@dimen/settings_text_padding"
+            android:text="@string/ml_unit_choice"
+            android:textColor="@color/green"
+            android:textSize="@dimen/settings_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_separator" />
+
+        <TextView
+            android:id="@+id/ounces_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_ripple"
+            android:onClick='@{() -> unitFragment.saveMeasurementUnit("oz")}'
+            android:padding="@dimen/settings_text_padding"
+            android:text="@string/oz_unit_choice"
+            android:textColor="@color/white"
+            android:textSize="@dimen/settings_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/milliliters_unit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
